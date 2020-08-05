@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+            body{
+                background-color: #17252a;
+            }
+        .home{
+            text-align: center;
+            color:white;
+            margin-top: 10px;
+            width: 400px;
+        
+            background-color: lightgray;
+            background-image: url();
+        }
+        h1{
+            margin-bottom: 0 !important;
+        }
+        p{
+            font-size: 17px;
+            margin: 15px 0 10px 0;
+        }
+        .select-list{
+            cursor: pointer;
+            margin-right: 0 !important;
+        
+        }
+        .start{
+            display: inline-block;
+            
+        }
+        .quiz-img{
+            width: 120px;
+            display: inline-block;
+            margin-bottom: 10px;
+            
+        }
+        span{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #295464;
+            display: inline-block;
+            margin-top: 7px;
+        }
+        @media only screen and (max-width: 376px){
+            .home{
+                height: 100vh;
+                width: 100%;
+                margin-top: 0;
+                padding-top: 15%;
+                
+            }
+            .wrapper{
+                margin: 30px 0 10px 0;
+            }
+        }
+        
+
+    </style>
+    
+</head>
+<body>
+    <div class="container home">
+        <h1 class="display-3 text-info">10Q<img src="quiz.png" class="quiz-img" alt="quiz"></h1>
+        <p class=" text-secondary">
+            In this quiz, you will be asked ten multiple choice questions and you have to choose one of them.
+            <span>Have a good quiz!</span> <img src="icons/thumb3.png" alt="thumbs up">
+        </p>
+        <div class="wrapper">
+        <a href="#" data-toggle="tooltip" title="Choose Catagory">
+        <select name="Catagory"id="cat" class="btn btn-info select-list">
+            <option value="">Select Catagory</option>
+            <option value="9">Generel Knowledge</option>
+            <option value="17">Science and Nature</option>
+            <option value="21">Sports</option>
+            <option value="23">History</option>
+            <option value="18">Science and Computers</option>
+        </select>
+        </a>
+        <a href="#" data-toggle="tooltip" title="Choose Difficulty">
+        <select name="Catagory"id="diff" class="btn btn-info mt-2 select-list">
+            <option value="">Select Difficulty</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        </a>
+        </div>
+        <a href="_quiz.html" class="start"><button type="button" id="start"  class="btn btn-primary my-2">Start Quiz</button></a>
+
+    </div>
+    
+    <script src="jquery.min.js"></script>
+    <script>
+            localStorage.removeItem('cat');
+            localStorage.removeItem('dif');
+            console.log(localStorage.getItem('cat'));
+
+            $('#cat').on('change',function(event){
+                catog=($('#cat').children(':selected').val());
+                localStorage.setItem('cat',catog);
+                console.log(localStorage.getItem('cat'));
+            });
+            $('#diff').on('change',function(event){
+                diff=($('#diff').children(':selected').val());
+                localStorage.setItem('dif',diff);
+                console.log(localStorage.getItem('dif'));
+            });
+    </script>
+</body>
+</html>

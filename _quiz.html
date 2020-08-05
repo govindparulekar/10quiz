@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        body{
+            background-color: #17252a;
+        }
+        .home{
+            text-align: center;
+            color:white;
+            margin-top: 10px;
+            width: 400px;
+            height: 420px;
+            background-color:lightgray;
+            padding-top:20px; 
+            position: relative;
+        }
+        #question{
+            color: #9a1750;
+            font-size: 20px;
+            height:95px ;
+        
+        }
+        .option:hover{
+            cursor: pointer;
+            box-shadow:0 0 7px 3px #6e5b5b;
+
+        }
+        .option{
+            border-radius: 5px;
+            color: black;
+            padding: 5px 0;
+            
+        }
+        .option-list{
+            border-radius: 0;
+            width: 85%;
+            margin: auto;
+        }
+        #error-msg{
+            text-align: center;
+            position: absolute;
+            top: 30%;
+            right: 0px;
+            background-color: #f8f8f8;
+            display: none;
+        }
+        @media only screen and (max-width: 376px){
+            .home{
+               min-height: 100vh;
+                width: 100%;
+                margin-top: 0;
+                
+                padding-top: 20%;
+                padding-bottom: 10px;
+            }
+            .wrapper{
+                margin-top: 10%;
+            }
+            #question{
+                height: 150px;
+            }
+            .option{
+                margin-bottom: 10px !important;
+                padding: 10px;
+            }
+            
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container home">
+        <div  id="question">
+            loading...
+        </div>
+        <div class="cotainer">
+            <ul class="list-group mt-3 option-list">
+                <li class="list-group-item option  mb-1 ">...</li>
+                <li class="list-group-item option  mb-1">...</li>
+                <li class="list-group-item option  mb-1">...</li>
+                <li class="list-group-item option mb-1">...</li>
+            </ul>
+            <div class="wrapper">
+           <a href="index.html"><button class="btn btn-primary mt-2 mr-3" id="home">Quit</button></a>
+           <button class="btn btn-primary mt-2 ml-3" id="next">Next</button>
+            </div>
+        </div>
+        <div class="card text-danger py-3 px-2" id="error-msg">
+            Something went wrong.. <br>
+            Try checking Internet connection!
+           <a href="index.html"><button class="btn btn-primary mt-3">Home</button></a>
+
+        </div>
+    </div>
+    
+    <script src="jquery.min.js"></script>
+    <script src="test.js"></script>
+</body>
+</html>

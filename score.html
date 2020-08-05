@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        body{
+            background-color: #17252a;
+        }
+        .home{
+            text-align: center;
+            color:white;
+            margin-top: 10px;
+            width: 400px;
+            height: 420px;
+            background-color:lightgray;
+            padding-top:20px; 
+            position: relative;
+        }
+        @media only screen and (max-width: 376px){
+            .home{
+                height: 100vh;
+                width: 100%;
+                margin-top: 0;
+                padding-top: 20%;
+                
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container home px-5">
+        <h1 class="text-info">Your Score</h1>
+        <div class="card  py-3 mt-5 bg-success text-white" id="score">
+        </div>
+        <a href="index.html"><button class="btn btn-primary mt-5">Home</button></a>
+    </div>
+    <script src="jquery.min.js"></script>
+
+    <script>
+        var rights=localStorage.getItem('rights');
+        var score=document.createTextNode(rights+' out of 10');
+        document.getElementById('score').appendChild(score);
+        console.log(rights);
+    </script>
+</body>
+</html>
