@@ -73,7 +73,7 @@ function loadQuestionAndOptions(obj){// load questions and options
         //localStorage.setItem('wrongs',wrong_cnt);
         localStorage.setItem('rights',right_cnt);
 
-        var scroll_url=window.location.href.replace('_quiz','score');
+        var scroll_url=window.location.href.replace('quiz','score');
         console.log((scroll_url));
         window.location.href=scroll_url;
         return;
