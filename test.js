@@ -72,10 +72,7 @@ function loadQuestionAndOptions(obj){// load questions and options
     if(question_no==10){
         //localStorage.setItem('wrongs',wrong_cnt);
         localStorage.setItem('rights',right_cnt);
-
-        var scroll_url=window.location.href.replace('quiz','score');
-        console.log((scroll_url));
-        window.location.href=scroll_url;
+        window.location.href="score.html";
         return;
     }
 
